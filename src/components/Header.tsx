@@ -1,8 +1,7 @@
-export default function Footer() {
-    return (
-      <footer className="bg-gray-800 text-white p-4 text-center">
-        © {new Date().getFullYear()} My Blog
-      </footer>
-    );
-  }
-  
+export default function Header() {
+  return (
+    <header className="p-4 bg-blue-500 text-white">
+      <h1 className="text-lg font-bold">My Business</h1>
+    </header>
+  );
+}

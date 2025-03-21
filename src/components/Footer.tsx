@@ -1,8 +1,7 @@
-export default function Header() {
-    return (
-      <header className="bg-blue-500 text-white p-4">
-        <h1 className="text-2xl font-bold">My Blog</h1>
-      </header>
-    );
-  }
-  
+export default function Footer() {
+  return (
+    <footer className="p-4 bg-gray-800 text-white text-center">
+      © 2025 My Business. All rights reserved.
+    </footer>
+  );
+}

@@ -1,27 +1,19 @@
 "use client";
-
-import { usePostStore } from "@/store/usePostStore";
+import { useIntroStore } from "@/store/useIntroStore";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
-  const { posts, addPost } = usePostStore();
+  const { title, subtitle } = useIntroStore();
 
   return (
-    <div className="flex flex-col gap-4 items-center justify-center min-h-screen p-4">
-      <button
-        onClick={() =>
-          addPost({ id: Date.now(), title: "New Post", content: "This is a new post." })
-        }
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        Add Post
-      </button>
-
-      {posts.map((post) => (
-        <div key={post.id} className="border p-4 rounded-md w-80">
-          <h2 className="text-xl font-bold">{post.title}</h2>
-          <p>{post.content}</p>
-        </div>
-      ))}
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-1 flex items-center justify-center">
+        <HeroSection title={title} subtitle={subtitle} />
+      </main>
+      <Footer />
     </div>
   );
 }
